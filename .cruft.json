@@ -1,0 +1,21 @@
+{
+  "template": "git@github.com:abilian/cookiecutter-abilian-python.git",
+  "commit": "8dc1da48d0cdfc707bda2980bb0f039c075648db",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "full_name": "Abilian SAS",
+      "email": "sf@abilian.com",
+      "github_username": "sfermigier",
+      "project_name": "Flask-Plus",
+      "project_slug": "flask_plus",
+      "project_short_description": "Flask patternss and idoms",
+      "pypi_username": "sfermigier",
+      "version": "0.1.0",
+      "add_pyup_badge": "n",
+      "open_source_license": "Apache Software License 2.0",
+      "_template": "git@github.com:abilian/cookiecutter-abilian-python.git"
+    }
+  },
+  "directory": null
+}
