@@ -19,7 +19,7 @@ def inspect_registry():
 
     def sorter(t):
         _, metadata = t
-        return sorted(metadata.tags), metadata.name
+        return metadata.tag, metadata.name
 
     objs = sorted(registry.items(), key=sorter)
 
@@ -27,11 +27,11 @@ def inspect_registry():
     for obj, metadata in objs:
         name = metadata.name
         module = metadata.module
-        tags = ", ".join(metadata.tags)
+        tag = metadata.tag
         obj_type = str(type(obj))
-        rows.append((name, obj_type, tags, module))
+        rows.append((name, obj_type, tag, module))
 
-    headers = ["Obj", "Type", "Tags", "Module"]
+    headers = ["Obj", "Type", "Tag", "Module"]
     print_table(headers, rows)
 
 

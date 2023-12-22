@@ -14,7 +14,7 @@ def scan_packages(package_names: Iterator[str]):
 def scan_package(package_name: str):
     """Import all modules in a package (recursively), for side effects."""
     for module_name in _iter_module_names(package_name):
-        _module = importlib.import_module(module_name)
+        importlib.import_module(module_name)
 
 
 def _iter_module_names(package_name: str):

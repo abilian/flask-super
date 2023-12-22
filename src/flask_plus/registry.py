@@ -9,7 +9,7 @@ __all__ = ["registry", "register", "lookup"]
 class Metadata:
     name: str = ""
     module: str = ""
-    tags: list[str] = field(factory=list)
+    tag: str = ""
     extras: dict[str, Any] = field(factory=dict)
 
 
@@ -17,21 +17,15 @@ class Metadata:
 class Registry:
     registered: dict[Any, Metadata] = field(factory=dict)
 
-    def register(self, obj, name=None, module=None, tag=None, tags=None, extras=None):
-        if name is None:
+    def register(self, obj, name="", module="", tag="", extras=None):
+        if not name:
             name = obj.__name__
-        if module is None:
+        if not module:
             module = obj.__module__
-
-        if tag:
-            tags = [tag]
-        elif tags is None:
-            tags = []
-
         if extras is None:
             extras = {}
 
-        metadata = Metadata(name=name, module=module, tags=tags, extras=extras)
+        metadata = Metadata(name=name, module=module, tag=tag, extras=extras)
         self.registered[obj] = metadata
         return obj
 
@@ -47,19 +41,19 @@ class Registry:
                 raise TypeError(f"Invalid key type: {type(key)}")
 
         if tag:
-            return [obj for obj, metadata in objs if tag in metadata.tags]
+            return [obj for obj, metadata in objs if tag == metadata.tag]
         else:
             return [obj for obj, _metadata in objs]
 
-    def _lookup_by_name(self, name: str) -> list:
+    def _lookup_by_name(self, name: str) -> list[tuple[Any, Metadata]]:
         result = []
         for obj, metadata in self.registered.items():
             if metadata.name == name:
                 result.append((obj, metadata))
         return result
 
-    def _lookup_by_type(self, cls: type) -> Any:
-        result = []
+    def _lookup_by_type(self, cls: type) -> list[tuple[Any, Metadata]]:
+        result: list[tuple[Any, Metadata]] = []
         for obj, metadata in self.registered.items():
             if isinstance(obj, type):
                 if issubclass(obj, cls):

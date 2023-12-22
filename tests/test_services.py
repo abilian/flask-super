@@ -35,7 +35,8 @@ def test_single_service():
 
 
 def test_singleton():
-    """Test that a singleton service is only created once over the lifetime of an application."""
+    """Test that a singleton service is only created once over the lifetime
+    of an application."""
 
     @singleton
     class Singleton:
