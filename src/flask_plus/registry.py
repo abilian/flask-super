@@ -10,22 +10,28 @@ class Metadata:
     name: str = ""
     module: str = ""
     tags: list[str] = field(factory=list)
+    extras: dict[str, Any] = field(factory=dict)
 
 
 @define
 class Registry:
     registered: dict[Any, Metadata] = field(factory=dict)
 
-    def register(self, obj, name=None, module=None, tag=None, tags=None):
+    def register(self, obj, name=None, module=None, tag=None, tags=None, extras=None):
         if name is None:
             name = obj.__name__
         if module is None:
             module = obj.__module__
+
         if tag:
             tags = [tag]
         elif tags is None:
             tags = []
-        metadata = Metadata(name=name, module=module, tags=tags)
+
+        if extras is None:
+            extras = {}
+
+        metadata = Metadata(name=name, module=module, tags=tags, extras=extras)
         self.registered[obj] = metadata
         return obj
 

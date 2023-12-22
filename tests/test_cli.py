@@ -3,6 +3,8 @@ from click.testing import CliRunner
 from flask import Flask
 
 from flask_plus.decorators import service
+from flask_plus.scanner import scan_package
+from flask_plus.services import register_services
 
 
 @service
@@ -18,8 +20,12 @@ def create_app() -> Flask:
 
 
 def test_cli():
+    scan_package("flask_plus.cli.commands")
+
     app = create_app()
+    register_services(app)
+
     runner = CliRunner()
     result = runner.invoke(app.cli, ["inspect"])
-    debug(result.output)
+    print(result.output)
     assert result.exit_code == 0

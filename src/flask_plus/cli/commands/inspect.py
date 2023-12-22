@@ -49,9 +49,6 @@ def inspect_services():
 
     rows = []
     for k, v in services:
-        # if isinstance(v, RepositoryFactory):
-        #     name = f"RepositoryFactory({v.cls.__name__})"
-        #     module = v.cls.__module__
         if hasattr(v, "cls"):
             v = v.cls  # noqa: PLW2901
 

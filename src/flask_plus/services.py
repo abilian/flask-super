@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import importlib
 from inspect import signature
+from typing import Any
 
 import svcs
+from attr import define, field
 from flask import Flask
 from svcs.flask import register_factory
 
@@ -27,5 +30,25 @@ def register_services(app: Flask):
         else:
             factory = cls_or_factory
             sig = signature(factory)
-            cls = sig.return_annotation
+            cls_name = sig.return_annotation
+            module = importlib.import_module(factory.__module__)
+            cls = getattr(module, cls_name)
             svcs.flask.register_factory(app, cls, factory)
+
+
+@define
+class SingletonFactory:
+    cls: type
+    holder: list[Any] = field(factory=list)
+
+    def __call__(self) -> Any:
+        if not self.holder:
+            self.holder.append(self.cls())
+        return self.holder[0]
+
+
+def register_singletons(app: Flask):
+    singletons = lookup(tag="singleton")
+
+    for cls in singletons:
+        svcs.flask.register_factory(app, cls, SingletonFactory(cls))

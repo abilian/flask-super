@@ -2,11 +2,10 @@ from __future__ import annotations
 
 import importlib
 import pkgutil
+from collections.abc import Iterator
 
 
-def scan_packages(
-    package_names: list[str],
-):
+def scan_packages(package_names: Iterator[str]):
     """Scan all packages from the given list."""
     for package_name in package_names:
         scan_package(package_name)
