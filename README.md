@@ -5,10 +5,10 @@
 [![Documentation Status](https://readthedocs.org/projects/flask-plus/badge/?version=latest)](https://flask-plus.readthedocs.io/en/latest/?version=latest)
 
 > "Any sufficiently complicated Python program contains an ad-hoc, informally-specified 
-> bug-ridden slow implementation of half of the Zope Component Architecture."
+> bug-ridden slow implementation of half of the Zope Component Architecture." (S. Fermigier, December 2023).
 
 
-> **Warning**
+> [!WARNING]  
 > Due to PyPI refusing the submission of a package called "FLask-Plus", the package
 > has been renamed (temporarily?) "Flask-Super". The Python package is still called
 > `flask_plus`, though.
