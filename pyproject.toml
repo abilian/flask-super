@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Flask-Plus"
+name = "Flask-Super"
 version = "0.1.0"
 homepage = "https://github.com/abilian/flask_plus"
 description = "Patterns and idioms for Flask applications."

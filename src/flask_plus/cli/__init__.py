@@ -12,7 +12,7 @@ def command(*args, **kwargs):
         module = func.__module__
         name = func.__name__
         cmd = click.command(*args, **kwargs)(func)
-        register(cmd, name=name, module=module, tags=["cli"])
+        register(cmd, name=name, module=module, tag="cli")
         return cmd
 
     return decorator
@@ -23,7 +23,7 @@ def group(*args, **kwargs):
         module = func.__module__
         name = func.__name__
         cmd = click.group(*args, **kwargs)(func)
-        register(cmd, name=name, module=module, tags=["cli"])
+        register(cmd, name=name, module=module, tag="cli")
         return cmd
 
     return decorator

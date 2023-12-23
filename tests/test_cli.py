@@ -20,7 +20,6 @@ def create_app() -> Flask:
     return app
 
 
-@pytest.mark.skip()
 def test_cli():
     scan_package("flask_plus.cli.commands")
 
