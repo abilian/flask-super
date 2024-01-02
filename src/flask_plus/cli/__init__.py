@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import click
 
 from flask_plus.registry import lookup, register

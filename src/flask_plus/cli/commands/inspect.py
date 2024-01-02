@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from cleez.colors import blue
 from flask.cli import with_appcontext
 from svcs.flask import container
@@ -40,17 +42,18 @@ def inspect_services():
     print()
 
     registry = container.registry
-    services = []
-    for registered_service in registry._services.values():
-        services.append(
-            (registered_service.svc_type.__name__, registered_service.factory)
-        )
+    services = [
+        (registered_service.svc_type.__name__, registered_service.factory)
+        for registered_service in registry._services.values()
+    ]
     services.sort(key=lambda x: x[0].lower())
 
     rows = []
-    for k, v in services:
-        if hasattr(v, "cls"):
-            v = v.cls  # noqa: PLW2901
+    for k, _v in services:
+        if hasattr(_v, "cls"):
+            v = _v.cls  # type: ignore
+        else:
+            v = _v
 
         name = v.__name__
         module = v.__module__

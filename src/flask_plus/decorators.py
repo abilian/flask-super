@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from .cli import command, group
 from .registry import register
 
