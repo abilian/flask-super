@@ -19,5 +19,4 @@ def test_cli(app: Flask, runner: FlaskCliRunner):
     flask_super.init_app(app)
 
     result = runner.invoke(args=["inspect"])
-    debug(result.output)
-    assert result.exit_code == 0
+    assert "ServiceClass" in result.output
