@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "Flask-Super"
 version = "0.1.1"
-homepage = "https://github.com/abilian/flask_plus"
+homepage = "https://github.com/abilian/flask-super"
 description = "Patterns and idioms for Flask applications."
 authors = ["Abilian SAS <sf@abilian.com>"]
 readme = "README.md"
@@ -14,7 +14,7 @@ classifiers = [
     'Programming Language :: Python :: 3.12',
 ]
 packages = [
-    { include = "flask_plus", from = "src" },
+    { include = "flask_super", from = "src" },
     { include = "tests", format = "sdist" },
 ]
 
@@ -36,6 +36,7 @@ cruft = "*"
 toml = "*"
 
 ## /standard cruft
+pyanalyze = "^0.11.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -58,40 +59,6 @@ addopts = "--tb=short"
 testpaths = [
     "tests",
     "src",
-]
-
-# ---
-
-[tool.ruff]
-#select = [
-#    "F",
-#    "E",
-#    "C90",
-#    "I",
-#    "UP",
-#    "N",
-#    "YTT",
-#    "B",
-#    "A",
-#    "C4",
-#    "ICN",
-#    "Q",
-#    "S",
-#    "BLE",
-#    "RET",
-#    "SIM",
-#    "TID",
-#    "RUF",
-#    "PLC", "PLE", "PLR", "PLW",
-#]
-## Add later: "ANN", "ERA"...
-
-ignore = [
-    "S101", # Use of `assert` detected
-    "I001", # Import block is un-sorted or un-formatted (WHY!?)
-    "PLR0913", # Too many arguments in function definition
-    "RET505", # Unnecessary `else` after `return` statement
-    "RET504", # Unnecessary assignment before `return` statement
 ]
 
 # ---
@@ -126,18 +93,18 @@ value_always_true = true
 #value_always_true = true
 
 # TODO: fix issues and remove
-attribute_is_never_set = false
-duplicate_dict_key = false
-import_failed = false
-impossible_pattern = false
-incompatible_argument = false
-incompatible_call = false
-incompatible_return_value = false
-internal_error = false
-missing_return = false
-possibly_undefined_name = false
-undefined_attribute = false
-unused_variable = false
+#attribute_is_never_set = false
+#duplicate_dict_key = false
+#import_failed = false
+#impossible_pattern = false
+#incompatible_argument = false
+#incompatible_call = false
+#incompatible_return_value = false
+#internal_error = false
+#missing_return = false
+#possibly_undefined_name = false
+#undefined_attribute = false
+#unused_variable = false
 
 # ---
 

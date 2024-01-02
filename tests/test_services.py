@@ -2,8 +2,8 @@ import svcs
 from flask import Flask
 from svcs.flask import container
 
-from flask_plus.decorators import service, singleton
-from flask_plus.services import register_services, register_singletons
+from flask_super.decorators import service, singleton
+from flask_super.services import register_services, register_singletons
 
 
 def create_app() -> Flask:

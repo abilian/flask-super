@@ -1,1 +1,1 @@
-"""Unit test package for flask_plus."""
+"""Unit test package for flask_super."""

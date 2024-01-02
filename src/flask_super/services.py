@@ -13,7 +13,7 @@ __all__ = [
     "register_services",
 ]
 
-from flask_plus.registry import lookup
+from flask_super.registry import lookup
 
 
 def register_services(app: Flask):

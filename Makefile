@@ -2,7 +2,7 @@
 .PHONY: clean clean-build clean-pyc clean-test coverage dist docs install lint lint/flake8
 
 # The package name
-PKG=flask_plus
+PKG=flask_super
 
 all: test lint
 

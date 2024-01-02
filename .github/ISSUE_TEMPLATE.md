@@ -1,4 +1,4 @@
-* Flask-Plus version:
+* Flask-Super version:
 * Python version:
 * Operating System:
 

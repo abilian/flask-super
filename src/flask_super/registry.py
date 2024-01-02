@@ -32,6 +32,7 @@ class Registry:
         return obj
 
     def lookup(self, key: str | type = "", tag: str = "") -> list:
+        objs = []
         match key:
             case "":
                 objs = list(self.registered.items())

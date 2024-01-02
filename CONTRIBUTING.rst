@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/sfermigier/flask_plus/issues.
+Report bugs at https://github.com/abilian/flask-super/issues.
 
 If you are reporting a bug, please include:
 
@@ -38,14 +38,14 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Flask-Plus could always use more documentation, whether as part of the
-official Flask-Plus docs, in docstrings, or even on the web in blog posts,
+Flask-Super could always use more documentation, whether as part of the
+official Flask-Super docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/sfermigier/flask_plus/issues.
+The best way to send feedback is to file an issue at https://github.com/abilian/flask-super/issues.
 
 If you are proposing a feature:
 
@@ -57,17 +57,19 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `flask_plus` for local development.
+Ready to contribute? Here's how to set up `flask-super` for local development.
 
-1. Fork the `flask_plus` repo on GitHub.
+1. Fork the `flask-super` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/flask_plus.git
+    $ git clone git@github.com:abilian/flask-super.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv flask_plus
-    $ cd flask_plus/
+    $ mkvirtualenv flask-super
+    $ cd flask-super/
+    $ poetry shell
+    $ poetry install
     $ python setup.py develop
 
 4. Create a branch for local development::
@@ -76,14 +78,13 @@ Ready to contribute? Here's how to set up `flask_plus` for local development.
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox::
+5. When you're done making changes, check that your changes pass the linters and the
+   tests, including testing other Python versions with tox and/or nox::
 
-    $ flake8 flask_plus tests
-    $ python setup.py test or pytest
+    $ make lint
+    $ make test
     $ tox
-
-   To get flake8 and tox, just pip install them into your virtualenv.
+    $ nox
 
 6. Commit your changes and push your branch to GitHub::
 
@@ -102,16 +103,14 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 3.5, 3.6, 3.7 and 3.8, and for PyPy. Check
-   https://travis-ci.com/sfermigier/flask_plus/pull_requests
-   and make sure that the tests pass for all supported Python versions.
+3. The pull request should work for Python 3.10, 3.11 and 3.12.
 
 Tips
 ----
 
 To run a subset of tests::
 
-    $ pytest tests.test_flask_plus
+    $ pytest tests.test_something
 
 Deploying
 ---------
@@ -120,8 +119,7 @@ A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.rst).
 Then run::
 
-$ bump2version patch # possible: major / minor / patch
-$ git push
-$ git push --tags
-
-Travis will then deploy to PyPI if tests pass.
+    $ adt bump-version major|minor|patch
+    $ git push
+    $ git push --tags
+    $ make publish

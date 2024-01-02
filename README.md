@@ -1,19 +1,18 @@
-# Flask-Plus
+# Flask-Super
 
-[![image](https://img.shields.io/pypi/v/flask_plus.svg)](https://pypi.python.org/pypi/flask_plus)
+[![image](https://img.shields.io/pypi/v/flask_super.svg)](https://pypi.python.org/pypi/flask_super)
 
-[![Documentation Status](https://readthedocs.org/projects/flask-plus/badge/?version=latest)](https://flask-plus.readthedocs.io/en/latest/?version=latest)
+[![Documentation Status](https://readthedocs.org/projects/flask-super/badge/?version=latest)](https://flask-super.readthedocs.io/en/latest/?version=latest)
 
-> "Any sufficiently complicated Python program contains an ad-hoc, informally-specified 
+> "Any sufficiently complicated Python program contains an ad-hoc, informally-specified
 > bug-ridden slow implementation of half of the Zope Component Architecture." (S. Fermigier, December 2023).
 
 
-> [!WARNING]  
+> [!WARNING]
 > Due to PyPI refusing the submission of a package called "FLask-Plus", the package
-> has been renamed (temporarily?) "Flask-Super". The Python package is still called
-> `flask_plus`, though.
-> 
-> (I known this sucks. Either way, it's temporary. Stay tuned.)
+> has been renamed (temporarily?) "Flask-Super".
+>
+> (I know this sucks. Either way, it's temporary. Stay tuned.)
 
 
 ## Flask patterns and idoms

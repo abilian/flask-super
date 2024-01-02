@@ -4,8 +4,8 @@ from cleez.colors import blue
 from flask.cli import with_appcontext
 from svcs.flask import container
 
-from flask_plus.cli import command
-from flask_plus.registry import registry
+from flask_super.cli import command
+from flask_super.registry import registry
 
 
 @command(short_help="Inspect app")

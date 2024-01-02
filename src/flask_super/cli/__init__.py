@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import click
 
-from flask_plus.registry import lookup, register
+from flask_super.registry import lookup, register
 
 __all__ = ["register_commands", "command", "group"]
 
-from flask_plus.scanner import scan_package
+from flask_super.scanner import scan_package
 
 
 def command(*args, **kwargs):
@@ -32,7 +32,7 @@ def group(*args, **kwargs):
 
 
 def register_commands(app):
-    scan_package("flask_plus.cli.commands")
+    scan_package("flask_super.cli.commands")
 
     for obj in lookup(click.Command):
         app.cli.add_command(obj)
