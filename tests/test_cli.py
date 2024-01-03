@@ -20,3 +20,6 @@ def test_cli(app: Flask, runner: FlaskCliRunner):
 
     result = runner.invoke(args=["inspect"])
     assert "ServiceClass" in result.output
+
+    result = runner.invoke(args=["config"])
+    assert "CONFIG:" in result.output
