@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Flask-Super"
-version = "0.2.1"
+version = "0.2.2"
 homepage = "https://github.com/abilian/flask-super"
 description = "Patterns and idioms for Flask applications."
 authors = ["Abilian SAS <sf@abilian.com>"]
