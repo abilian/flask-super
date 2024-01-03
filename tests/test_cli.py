@@ -1,11 +1,8 @@
-from devtools import debug
 from flask import Flask
 from flask.testing import FlaskCliRunner
 
 import flask_super
 from flask_super.decorators import service
-from flask_super.scanner import scan_package
-from flask_super.services import register_services
 
 
 @service
@@ -14,9 +11,11 @@ class ServiceClass:
 
 
 def test_cli(app: Flask, runner: FlaskCliRunner):
-    scan_package("flask_super.cli.commands")
-    register_services(app)
     flask_super.init_app(app)
+
+    result = runner.invoke()
+    assert "inspect" in result.output
+    assert "config" in result.output
 
     result = runner.invoke(args=["inspect"])
     assert "ServiceClass" in result.output
