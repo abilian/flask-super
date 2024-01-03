@@ -5,7 +5,7 @@ from inspect import signature
 from typing import Any
 
 import svcs
-from attr import define, field
+from attr import field, frozen
 from flask import Flask
 from svcs.flask import register_factory
 
@@ -36,7 +36,7 @@ def register_services(app: Flask):
             svcs.flask.register_factory(app, cls, factory)
 
 
-@define
+@frozen
 class SingletonFactory:
     cls: type
     holder: list[Any] = field(factory=list)

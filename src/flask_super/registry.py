@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from attr import define, field
+from attr import field, frozen
 
 __all__ = ["registry", "register", "lookup"]
 
 
-@define
+@frozen
 class Metadata:
     name: str = ""
     module: str = ""
@@ -15,7 +15,7 @@ class Metadata:
     extras: dict[str, Any] = field(factory=dict)
 
 
-@define
+@frozen
 class Registry:
     registered: dict[Any, Metadata] = field(factory=dict)
 
