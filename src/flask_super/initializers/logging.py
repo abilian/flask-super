@@ -1,3 +1,5 @@
+# ruff: noqa: PLC0415
+
 from __future__ import annotations
 
 import logging
@@ -18,7 +20,7 @@ def init_logging(app: Flask) -> None:
 
 
 class InterceptHandler(logging.Handler):
-    def emit(self, record):
+    def emit(self, record):  # noqa: PLR6301
         logger_opt = logger.opt(depth=6, exception=record.exc_info)
         logger_opt.log(record.levelno, record.getMessage())
 
