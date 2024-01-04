@@ -25,6 +25,7 @@
 
 - Decorator-based registration system for services (using [svcs](https://svcs.hynek.me/))
 - Powerful inspection CLI command (`flask inspect` and `flask config`).
+- Flask initialisation helpers.
 
 
 ## Status
