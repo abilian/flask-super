@@ -6,6 +6,8 @@ from flask_super.cli import register_commands
 from flask_super.scanner import scan_package
 from flask_super.services import register_services
 
+__all__ = ["init_app", "register_services", "scan_package", "register_commands"]
+
 
 def init_app(app):
     register_services(app)
