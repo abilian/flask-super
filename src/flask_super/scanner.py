@@ -7,12 +7,16 @@ from collections.abc import Iterable
 
 def scan_packages(package_names: Iterable[str]):
     """Scan all packages from the given list."""
+    assert not isinstance(package_names, str)
+
     for package_name in package_names:
         scan_package(package_name)
 
 
 def scan_package(package_name: str):
     """Import all modules in a package (recursively), for side effects."""
+    assert isinstance(package_name, str)
+
     for module_name in _iter_module_names(package_name):
         importlib.import_module(module_name)
 
