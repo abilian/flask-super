@@ -24,14 +24,14 @@ packages = [
 python = ">=3.10,<4"
 
 flask = "^3.0.0"
-svcs = "^23.21.0"
+svcs = "^24.1.0"
 sentry-sdk = "^1.39.1"
 loguru = "^0.7.2"
 
 
 [tool.poetry.group.dev.dependencies]
 ## Standard cruft
-abilian-devtools = "*"
+abilian-devtools = ">=0.5.16"
 
 # Cruft (project templates management)
 cruft = "*"

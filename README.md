@@ -18,7 +18,6 @@
 ## Flask patterns and idoms
 
 -   Free software: Apache Software License 2.0
--   No documentation yet.
 
 
 ## Features
