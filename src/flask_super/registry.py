@@ -4,7 +4,7 @@ from typing import Any
 
 from attr import field, frozen
 
-__all__ = ["registry", "register", "lookup"]
+__all__ = ["lookup", "register", "registry"]
 
 
 @frozen

@@ -4,7 +4,7 @@ import click
 
 from flask_super.registry import lookup, register
 
-__all__ = ["register_commands", "command", "group"]
+__all__ = ["command", "group", "register_commands"]
 
 from flask_super.scanner import scan_package
 
