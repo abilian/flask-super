@@ -4,25 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [0.2.8] - 2024-07-04
 
-### ⚙️ Miscellaneous Tasks
+### 📚 Documentation
 
-- Update ruff config.
-- Update deps.
-- Deps, ruff config
-
-## [0.2.7] - 2024-05-01
-
-### ⚙️ Miscellaneous Tasks
-
-- Deps
-- Deps
-- Update deps.
-
-## [0.2.6] - 2024-02-01
-
-### ⚙️ Miscellaneous Tasks
-
-- Update deps.
+- Prepare release, update docs.
 
 ## [0.2.5] - 2024-01-19
 
@@ -34,19 +18,11 @@ All notable changes to this project will be documented in this file.
 
 - Add some hints how to use it.
 
-### ⚙️ Miscellaneous Tasks
-
-- Lock dependencies.
-
 ## [0.2.4] - 2024-01-04
 
 ### 🐛 Bug Fixes
 
 - Type error.
-
-### ⚙️ Miscellaneous Tasks
-
-- Allow import from package.
 
 ## [0.2.3] - 2024-01-04
 
@@ -54,13 +30,13 @@ All notable changes to this project will be documented in this file.
 
 - Logging.
 
-### Refact
+### 🚜 Refactor
 
 - Lazy import sentry-sdk
 
 ## [0.2.2] - 2024-01-03
 
-### Refact
+### 🚜 Refactor
 
 - Cleanup and improve init_app
 - Define -> frozen
