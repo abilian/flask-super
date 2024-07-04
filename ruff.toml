@@ -2,6 +2,7 @@ preview = true
 
 exclude = []
 
+[lint]
 select = [
     "F", # Pyflakes
     "E", # pycodestyle
@@ -82,5 +83,5 @@ extend-ignore = [
     "SLF001", # Private member accessed
 ]
 
-[mccabe]
+[lint.mccabe]
 max-complexity = 10
