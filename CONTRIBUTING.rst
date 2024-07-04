@@ -116,10 +116,13 @@ Deploying
 ---------
 
 A reminder for the maintainers on how to deploy.
-Make sure all your changes are committed (including an entry in HISTORY.rst).
+Make sure all your changes are committed (including an entry in CHANGELOG.md).
 Then run::
 
+    $ git cliff -t __TAG__ > CHANGELOG.md
     $ adt bump-version major|minor|patch
     $ git push
     $ git push --tags
     $ make publish
+
+FIX: Find a way to automate this process, specially the CHANGELOG.md generation.
