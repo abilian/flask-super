@@ -68,6 +68,7 @@ extend-ignore = [
     # False positive, don't remove
     "S101", # Use of `assert` detected
     "SIM108", # Use ternary operator
+    "A005",
     # Fix these
     "F401", # 'module' imported but unused
     "RET504", # Unnecessary variable assignment before `return` statement
