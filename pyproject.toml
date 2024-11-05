@@ -23,23 +23,22 @@ packages = [
 # We're uing pattern matching, so we need Python >=3.10
 python = ">=3.10,<4"
 
-flask = "^3.0.0"
-svcs = "^24.1.0"
+flask = "^3.0"
+svcs = "^24.1"
 sentry-sdk = "^2"
-loguru = "^0.7.2"
+loguru = "^0.7"
 
 
 [tool.poetry.group.dev.dependencies]
 ## Standard cruft
-abilian-devtools = ">=0.5.16"
+abilian-devtools = ">=0.6"
 
-# Cruft (project templates management)
 cruft = "*"
 toml = "*"
 
 ## /standard cruft
-# pyanalyze = "^0.11.0"
-devtools = "^0.12.2"
+
+devtools = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

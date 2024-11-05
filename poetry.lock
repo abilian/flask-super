@@ -2,20 +2,20 @@
 
 [[package]]
 name = "abilian-devtools"
-version = "0.7.0"
+version = "0.7.3"
 description = "A curated set of dependencies for quality software development"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "abilian_devtools-0.7.0-py3-none-any.whl", hash = "sha256:2092c1ad8b8b6b31e85cf5e452458f5816a7674d47545fc9bb09b7522dfc1a7b"},
-    {file = "abilian_devtools-0.7.0.tar.gz", hash = "sha256:879dd8f744c946f6b375edeea406665ce30b52d1c958e67b6927825c6406ae47"},
+    {file = "abilian_devtools-0.7.3-py3-none-any.whl", hash = "sha256:d88547ab9e9b24be872dd0984685a25f2075331033569f65a34132c530065299"},
+    {file = "abilian_devtools-0.7.3.tar.gz", hash = "sha256:51b682e72a66ec6b1fc7a154b8033108c83fc83e0858a0427f4c75c6eef87d96"},
 ]
 
 [package.dependencies]
 black = ">=24.1.0,<25.0.0"
 cleez = ">=0.1.11,<0.2.0"
 deptry = ">=0.20"
-dlint = ">=0.15.0,<0.16.0"
+dlint = ">=0.15.0"
 docformatter = ">=1.7.5,<2.0.0"
 flake8 = ">=7.0.0,<8.0.0"
 flake8-assertive = ">=2.1.0,<3.0.0"
@@ -50,7 +50,7 @@ pre-commit = ">=4,<5"
 profilehooks = ">=1,<2"
 pyright = ">=1.1.348,<2.0.0"
 pytest = ">=8,<9"
-pytest-cov = ">=5,<6"
+pytest-cov = ">=5"
 pytest-random-order = ">=1,<2"
 pytest-xdist = ">=3,<4"
 reuse = ">=4,<5"
@@ -236,13 +236,13 @@ files = [
 
 [[package]]
 name = "cachecontrol"
-version = "0.14.0"
+version = "0.14.1"
 description = "httplib2 caching for requests"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "cachecontrol-0.14.0-py3-none-any.whl", hash = "sha256:f5bf3f0620c38db2e5122c0726bdebb0d16869de966ea6a2befe92470b740ea0"},
-    {file = "cachecontrol-0.14.0.tar.gz", hash = "sha256:7db1195b41c81f8274a7bbd97c956f44e8348265a1bc7641c37dfebc39f0c938"},
+    {file = "cachecontrol-0.14.1-py3-none-any.whl", hash = "sha256:65e3abd62b06382ce3894df60dde9e0deb92aeb734724f68fa4f3b91e97206b9"},
+    {file = "cachecontrol-0.14.1.tar.gz", hash = "sha256:06ef916a1e4eb7dba9948cdfc9c76e749db2e02104a9a1277e8b642591a0f717"},
 ]
 
 [package.dependencies]
@@ -251,7 +251,7 @@ msgpack = ">=0.5.2,<2.0.0"
 requests = ">=2.16.0"
 
 [package.extras]
-dev = ["CacheControl[filecache,redis]", "black", "build", "cherrypy", "furo", "mypy", "pytest", "pytest-cov", "sphinx", "sphinx-copybutton", "tox", "types-redis", "types-requests"]
+dev = ["CacheControl[filecache,redis]", "build", "cherrypy", "codespell[tomli]", "furo", "mypy", "pytest", "pytest-cov", "ruff", "sphinx", "sphinx-copybutton", "tox", "types-redis", "types-requests"]
 filecache = ["filelock (>=3.8.0)"]
 redis = ["redis (>=2.10.5)"]
 
@@ -677,12 +677,12 @@ files = [
 
 [[package]]
 name = "dlint"
-version = "0.15.0"
+version = "0.16.0"
 description = "Dlint is a tool for encouraging best coding practices and helping ensure Python code is secure."
 optional = false
-python-versions = "*"
+python-versions = "<4.0.0,>=3.8.1"
 files = [
-    {file = "dlint-0.15.0-py3-none-any.whl", hash = "sha256:cc5bfa5a887427d808a3f188e5e2934ffb5bb43336f18710215b19d719d31ea7"},
+    {file = "dlint-0.16.0-py3-none-any.whl", hash = "sha256:b4b3b01460d1b310c3f2356be9ce9b7bc2112dfd9be1842eefef36a54eac9443"},
 ]
 
 [package.dependencies]
@@ -1907,17 +1907,17 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments
 
 [[package]]
 name = "pytest-cov"
-version = "5.0.0"
+version = "6.0.0"
 description = "Pytest plugin for measuring coverage."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "pytest-cov-5.0.0.tar.gz", hash = "sha256:5837b58e9f6ebd335b0f8060eecce69b662415b16dc503883a02f45dfeb14857"},
-    {file = "pytest_cov-5.0.0-py3-none-any.whl", hash = "sha256:4f0764a1219df53214206bf1feea4633c3b558a2925c8b59f144f682861ce652"},
+    {file = "pytest-cov-6.0.0.tar.gz", hash = "sha256:fde0b595ca248bb8e2d76f020b465f3b107c9632e6a1d1705f17834c89dcadc0"},
+    {file = "pytest_cov-6.0.0-py3-none-any.whl", hash = "sha256:eee6f1b9e61008bd34975a4d5bab25801eb31898b032dd55addc93e96fcaaa35"},
 ]
 
 [package.dependencies]
-coverage = {version = ">=5.2.1", extras = ["toml"]}
+coverage = {version = ">=7.5", extras = ["toml"]}
 pytest = ">=4.6"
 
 [package.extras]
@@ -2524,4 +2524,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4"
-content-hash = "cc06fb13dd41d3e1a4847c7b496877cc35d7d76b66929d093d8c200706a252f7"
+content-hash = "34162298bfe933ba5764f2dc85990b4190a315507324260ac3d9ab0adca21775"
