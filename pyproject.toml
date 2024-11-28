@@ -1,3 +1,13 @@
+[project]
+name = "flask-super"
+
+#version = "0.2.8"
+#description = "Patterns and idioms for Flask applications."
+#authors = [
+#    { name = "Abilian SAS", email = "sf@abilian.com" },
+#]
+
+
 [tool.poetry]
 name = "Flask-Super"
 version = "0.2.8"
@@ -43,6 +53,13 @@ devtools = "*"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "abilian-devtools>=0.7.5",
+    "devtools>=0.12.2",
+    "toml>=0.10.2",
+]
 
 # ---
 
