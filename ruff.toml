@@ -44,7 +44,7 @@ select = [
     "SLOT", # flake8-slots
     "T10", # flake8-debugger
     "T20", # flake8-print
-    "TCH", # flake8-type-checking
+    "TC", # flake8-type-checking
     "TID", # flake8-tidy-imports
     "TRY", # tryceratops
     "UP", # pyupgrade
@@ -75,9 +75,9 @@ extend-ignore = [
     "RET505", # Unnecessary `else` after `return` statement
     "I001", # Import block is un-sorted or un-formatted
     "T201", # `print` found
-    "TCH001", # Move import into a type-checking block
-    "TCH002", # Move import into a type-checking block
-    "TCH003", # Move import into a type-checking block
+    "TC001", # Move import into a type-checking block
+    "TC002", # Move import into a type-checking block
+    "TC003", # Move import into a type-checking block
     "TRY003", # Avoid specifying long messages outside the exception class
     "PLR0913", # Too many arguments in function definition
     "PLR0917", # Too many positional arguments
