@@ -28,6 +28,8 @@ def print_env():
 def print_config():
     config_ = dict(sorted(current_app.config.items()))
     for k, v in config_.items():
+        if k.startswith("__"):
+            continue
         try:
             v_str = str(v)
         except Exception:  # noqa: BLE001

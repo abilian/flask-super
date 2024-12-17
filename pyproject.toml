@@ -1,65 +1,33 @@
 [project]
 name = "flask-super"
-
-#version = "0.2.8"
-#description = "Patterns and idioms for Flask applications."
-#authors = [
-#    { name = "Abilian SAS", email = "sf@abilian.com" },
-#]
-
-
-[tool.poetry]
-name = "Flask-Super"
 version = "0.2.8"
-homepage = "https://github.com/abilian/flask-super"
 description = "Patterns and idioms for Flask applications."
-authors = ["Abilian SAS <sf@abilian.com>"]
 readme = "README.md"
-classifiers = [
-    'Development Status :: 2 - Pre-Alpha',
-    'Intended Audience :: Developers',
-    'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.10',
-    'Programming Language :: Python :: 3.11',
-    'Programming Language :: Python :: 3.12',
-]
-packages = [
-    { include = "flask_super", from = "src" },
-    { include = "tests", format = "sdist" },
-]
-
-
-[tool.poetry.dependencies]
+authors = [{ name = "Abilian SAS", email = "sf@abilian.com" }]
 # We're uing pattern matching, so we need Python >=3.10
-python = ">=3.10,<4"
+requires-python = ">=3.10,<4"
 
-flask = "^3.0"
-svcs = "^24.1"
-sentry-sdk = "^2"
-loguru = "^0.7"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
 
 
-[tool.poetry.group.dev.dependencies]
-## Standard cruft
-abilian-devtools = ">=0.6"
+dependencies = [
+    "flask>=3.0",
+    "svcs>=24.1",
+    "sentry-sdk>=2",
+    "loguru>=0.7",
+]
 
-cruft = "*"
-toml = "*"
-
-## /standard cruft
-
-devtools = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[dependency-groups]
-dev = [
-    "abilian-devtools>=0.7.5",
-    "devtools>=0.12.2",
-    "toml>=0.10.2",
-]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 # ---
 
@@ -68,7 +36,6 @@ profile = "black"
 
 # ---
 
-# pyproject.toml
 [tool.pytest.ini_options]
 filterwarnings = [
     #    'ignore:.*contextfunction.*:DeprecationWarning',
@@ -160,3 +127,11 @@ reportPrivateImportUsage = false
 reportGeneralTypeIssues = false
 reportMissingImports = false
 reportOptionalSubscript = false
+
+[dependency-groups]
+dev = [
+    "abilian-devtools>=0.7.6",
+    "devtools>=0.12.2",
+    "pyanalyze>=0.13.1",
+    "toml>=0.10.2",
+]

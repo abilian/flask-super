@@ -63,6 +63,7 @@ clean-test: ## remove test and coverage artifacts
 ## Lint / check typing
 lint:
 	adt check src tests
+	pyanalyze src tests
 
 # Alt
 #lint:
