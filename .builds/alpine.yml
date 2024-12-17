@@ -1,0 +1,36 @@
+# Copyright (c) 2024, Abilian SAS
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+image: alpine/edge
+
+packages:
+  # Build
+  - gcc
+  # Libraries
+  - musl-dev
+  # Python dev
+  - python3-dev
+  - py3-tox
+  - py3-nox
+  - py3-pip
+  - uv
+
+tasks:
+  - lint: |
+      cd flask-super
+      uv run make lint
+
+  - test: |
+      cd flask-super
+      uv run make test
+
+  - lint-nox: |
+      cd flask-super
+      uv run nox -e lint
+
+  - test-nox: |
+      cd flask-super
+      # Default Python version is python 3.12
+      # TODO: install other versions using rye
+      uv run nox -e pytest-3.12
