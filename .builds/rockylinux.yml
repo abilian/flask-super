@@ -21,23 +21,23 @@ tasks:
       uv sync
 
   - lint: |
-      cd abilian-sbe
+      cd flask-super
       uv run make lint
 
   - test: |
-      cd abilian-sbe
+      cd flask-super
       uv run make test
 
   - nox-lint: |
-      cd abilian-sbe
+      cd flask-super
       nox -e lint
 
   - nox-test: |
-      cd abilian-sbe
+      cd flask-super
       # Default Python version is python 3.12
-      # TODO: install other versions using rye
+      # TODO: install other versions using rye or uv
       nox -e pytest-3.12
 
   - buildah: |
-      cd abilian-sbe
+      cd flask-super
       buildah build .

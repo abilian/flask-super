@@ -32,5 +32,5 @@ tasks:
   - test-nox: |
       cd flask-super
       # Default Python version is python 3.12
-      # TODO: install other versions using rye
+      # TODO: install other versions using rye or uv
       uv run nox -e pytest-3.12
