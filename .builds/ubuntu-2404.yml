@@ -13,27 +13,24 @@ packages:
   - python3-wheel
   - pipx
 
+environment:
+    - PATH: /home/build/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 tasks:
   - setup: |
       pipx install uv nox
-      export PATH=$HOME/.local/bin:$PATH
-      echo $PATH
 
   - make: |
-      export PATH=$HOME/.local/bin:$PATH
       cd flask-super
       uv sync
       uv run make test
       uv run make lint
 
   - lint-nox: |
-      export PATH=$HOME/.local/bin:$PATH
       cd flask-super
       nox -e lint
 
   - test-nox: |
-      export PATH=$HOME/.local/bin:$PATH
       cd flask-super
       # Default Python version is python 3.12
       # TODO: install other versions using rye or uv

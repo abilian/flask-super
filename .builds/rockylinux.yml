@@ -37,7 +37,3 @@ tasks:
       # Default Python version is python 3.12
       # TODO: install other versions using rye or uv
       nox -e pytest-3.12
-
-  - buildah: |
-      cd flask-super
-      buildah build .
