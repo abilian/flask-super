@@ -1,4 +1,4 @@
-image: ubuntu/24.04
+image: ubuntu/22.04
 
 packages:
   # Build tools
@@ -12,7 +12,6 @@ packages:
   - python3-pip
   - python3-wheel
   - pipx
-
 
 tasks:
   - setup: |
