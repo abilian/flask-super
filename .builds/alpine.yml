@@ -7,6 +7,9 @@ image: alpine/edge
 packages:
   # Build
   - gcc
+  - rust
+  - cargo
+  # - maturin
   # Libraries
   - musl-dev
   # Python dev
