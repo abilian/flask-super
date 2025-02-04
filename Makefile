@@ -15,8 +15,7 @@ develop: install-deps activate-pre-commit configure-git
 
 install-deps:
 	@echo "--> Installing dependencies"
-	pip install -U pip setuptools wheel
-	poetry install
+	uv sync
 
 activate-pre-commit:
 	@echo "--> Activating pre-commit hook"
@@ -106,7 +105,7 @@ help:
 	@inv help-make
 
 install:
-	poetry install
+	uv sync
 
 doc: doc-html doc-pdf
 
@@ -133,13 +132,13 @@ tidy: clean
 
 ## Update dependencies
 update-deps:
-	pip install -U pip setuptools wheel
-	poetry update
-	poetry show -o
+	uv sync -U
+	pre-commit autoupdate
+	uv pip list --outdated
 
 ## Publish to PyPI
 publish: clean
 	git push
 	git push --tags
-	poetry build
+	uv build
 	twine upload dist/*
