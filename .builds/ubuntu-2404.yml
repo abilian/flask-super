@@ -11,7 +11,7 @@ packages:
   - python3-dev
 
 environment:
-    - PATH: /home/build/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  - PATH: /home/build/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 tasks:
   - setup: |
