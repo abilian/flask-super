@@ -1,6 +1,6 @@
 [project]
 name = "flask-super"
-version = "0.2.9"
+version = "0.2.10"
 description = "Patterns and idioms for Flask applications."
 readme = "README.md"
 authors = [{ name = "Abilian SAS", email = "sf@abilian.com" }]
