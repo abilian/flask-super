@@ -1,70 +1,21 @@
-preview = true
-
-exclude = []
-
 [lint]
 select = [
-    "A", # flake8-builtins
-    "ARG", # flake8-unused-arguments
-    "ASYNC", # flake8-async
-    "B", # flake8-bugbear
-    "BLE", # flake8-blind-except
-    "C4", # flake8-comprehensions
-    "C90", # mccabe
-    "DJ", # flake8-django
-    "DTZ", # flake8-datetimez
-    "E", # pycodestyle
-    "ERA", # eradicate
-    "EXE", # flake8-executable
-    "F", # Pyflakes
-    "FA", # flake8-future-annotations
-    "FLY", # flynt
-    "FURB", # refurb
-    "G", # flake8-logging-format
-    "I", # isort
-    "ICN", # flake8-import-conventions
-    "INT", # flake8-gettext
-    "ISC", # flake8-implicit-str-concat
-    "LOG", # flake8-logging
-    "N", # pep8-naming
-    "PD", # pandas-vet
-    "PERF", # Perflint
-    "PIE", # flake8-pie
-    "PL", # Pylint
-    "PT", # flake8-pytest-style
-    "PTH", # flake8-use-pathlib
-    "PYI", # flake8-pyi
-    "Q", # flake8-quotes
-    "RET", # flake8-return
-    "RSE", # flake8-raise
-    "RUF", # Ruff-specific rules
-    "S", # flake8-bandit
-    "SIM", # flake8-simplify
-    "SLF", # flake8-self
-    "SLOT", # flake8-slots
-    "T10", # flake8-debugger
-    "T20", # flake8-print
-    "TC", # flake8-type-checking
-    "TID", # flake8-tidy-imports
-    "TRY", # tryceratops
-    "UP", # pyupgrade
-    "W", # pycodestyle
-    "YTT", # flake8-2020
-#    "AIR", # Airflow
-#    "ANN", # flake8-annotations
-#    "COM", # flake8-commas
-#    "CPY", # flake8-copyright
-#    "D", # pydocstyle
-#    "EM", # flake8-errmsg
-#    "FBT", # flake8-boolean-trap
-#    "FIX", # flake8-fixme
-#    "INP", # flake8-no-pep420
-#    "NPY", # NumPy-specific rules
-#    "PGH", # pygrep-hooks
-#    "TD", # flake8-todos
+    "ALL",
 ]
 
 extend-ignore = [
+    "AIR", # Airflow
+    "ANN", # flake8-annotations
+    "COM", # flake8-commas
+    "CPY", # flake8-copyright
+    "D", # pydocstyle
+    "EM", # flake8-errmsg
+    "FBT", # flake8-boolean-trap
+    "FIX", # flake8-fixme
+    "INP", # flake8-no-pep420
+    "NPY", # NumPy-specific rules
+    "PGH", # pygrep-hooks
+    "TD", # flake8-todos
     # False positive, don't remove
     "S101", # Use of `assert` detected
     "SIM108", # Use ternary operator
