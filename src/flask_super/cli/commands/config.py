@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import os
 
-from cleez.colors import blue
 from flask import current_app
 from flask.cli import with_appcontext
 
 from flask_super.cli import command
+
+from ._colors import blue
 
 
 @command(short_help="Show config")

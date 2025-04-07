@@ -1,11 +1,12 @@
 from __future__ import annotations
 
-from cleez.colors import blue
 from flask.cli import with_appcontext
 from svcs.flask import container
 
 from flask_super.cli import command
 from flask_super.registry import registry
+
+from ._colors import blue
 
 
 @command(short_help="Inspect app")
