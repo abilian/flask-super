@@ -510,7 +510,7 @@ wheels = [
 
 [[package]]
 name = "flask-super"
-version = "0.2.10"
+version = "0.2.11"
 source = { editable = "." }
 dependencies = [
     { name = "flask" },
