@@ -62,7 +62,8 @@ clean-test: ## remove test and coverage artifacts
 ## Lint / check typing
 lint:
 	adt check src tests
-	pyanalyze src tests
+	ruff check
+	pyrefly check
 
 # Alt
 #lint:
@@ -92,8 +93,8 @@ audit:
 ## Format / beautify code
 format:
 	docformatter -i -r src
-	black src
-	isort src tests
+	ruff format
+	ruff check --fix
 
 
 #

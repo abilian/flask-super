@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from typing import Any
+from collections.abc import Callable
+
 import click
 
 from flask_super.registry import lookup, register
@@ -9,8 +12,8 @@ __all__ = ["command", "group", "register_commands"]
 from flask_super.scanner import scan_package
 
 
-def command(*args, **kwargs):
-    def decorator(func):
+def command(*args: Any, **kwargs: Any) -> Callable:
+    def decorator(func: Callable) -> click.Command:
         module = func.__module__
         name = func.__name__
         cmd = click.command(*args, **kwargs)(func)
@@ -20,8 +23,8 @@ def command(*args, **kwargs):
     return decorator
 
 
-def group(*args, **kwargs):
-    def decorator(func):
+def group(*args: Any, **kwargs: Any) -> Callable:
+    def decorator(func: Callable) -> click.Group:
         module = func.__module__
         name = func.__name__
         cmd = click.group(*args, **kwargs)(func)

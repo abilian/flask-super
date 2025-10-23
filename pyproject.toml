@@ -24,10 +24,18 @@ dependencies = [
     "loguru>=0.7",
 ]
 
-
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.8.4,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "abilian-devtools>=0.7.6",
+    "devtools>=0.12.2",
+    "pyrefly>=0.38.2",
+    "ruff>=0.14.1",
+    "toml>=0.10.2",
+]
 
 # ---
 
@@ -54,43 +62,6 @@ skips = [
     "B404", # blacklist
     "B603", # subprocess_without_shell_equals_true
 ]
-
-# ---
-
-[tool.pyanalyze]
-paths = ["src/"]
-import_paths = ["."]
-
-# Additional checks
-bare_ignore = true
-missing_f = true
-use_fstrings = true
-value_always_true = true
-
-# TODO: fix issues and activate
-#unused_ignore = true
-#enforce_no_unused = true
-#incompatible_override = true
-#missing_parameter_annotation = true
-#missing_return_annotation = true
-#suggested_parameter_type = true
-#suggested_return_type = true
-#use_fstrings = true
-#value_always_true = true
-
-# TODO: fix issues and remove
-#attribute_is_never_set = false
-#duplicate_dict_key = false
-#import_failed = false
-#impossible_pattern = false
-#incompatible_argument = false
-#incompatible_call = false
-#incompatible_return_value = false
-#internal_error = false
-#missing_return = false
-#possibly_undefined_name = false
-#undefined_attribute = false
-#unused_variable = false
 
 # ---
 
@@ -127,11 +98,3 @@ reportPrivateImportUsage = false
 reportGeneralTypeIssues = false
 reportMissingImports = false
 reportOptionalSubscript = false
-
-[dependency-groups]
-dev = [
-    "abilian-devtools>=0.7.6",
-    "devtools>=0.12.2",
-    "pyanalyze>=0.13.1",
-    "toml>=0.10.2",
-]

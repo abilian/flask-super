@@ -27,7 +27,7 @@ class InterceptHandler(logging.Handler):
 
 def init_loguru(app: Flask):
     """Register loguru as (sole) handler."""
-    if app.debug:
+    if app.debug is True:
         level = "DEBUG"
     else:
         level = "INFO"
