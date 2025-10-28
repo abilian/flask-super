@@ -4,35 +4,15 @@ select = [
 ]
 
 extend-ignore = [
-    "AIR", # Airflow
     "ANN", # flake8-annotations
-    "COM", # flake8-commas
-    "CPY", # flake8-copyright
     "D", # pydocstyle
-    "EM", # flake8-errmsg
     "FBT", # flake8-boolean-trap
-    "FIX", # flake8-fixme
-    "INP", # flake8-no-pep420
-    "NPY", # NumPy-specific rules
     "PGH", # pygrep-hooks
-    "TD", # flake8-todos
     # False positive, don't remove
     "S101", # Use of `assert` detected
     "SIM108", # Use ternary operator
     "A005",
-    # Fix these
-    "F401", # 'module' imported but unused
-    "RET504", # Unnecessary variable assignment before `return` statement
-    "RET505", # Unnecessary `else` after `return` statement
-    "I001", # Import block is un-sorted or un-formatted
-    "T201", # `print` found
-    "TC001", # Move import into a type-checking block
-    "TC002", # Move import into a type-checking block
-    "TC003", # Move import into a type-checking block
-    "TRY003", # Avoid specifying long messages outside the exception class
-    "PLR0913", # Too many arguments in function definition
-    "PLR0917", # Too many positional arguments
-    "SLF001", # Private member accessed
+    "T201", #  	print
 ]
 
 [lint.mccabe]

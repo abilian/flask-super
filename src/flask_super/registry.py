@@ -40,12 +40,12 @@ class Registry:
             case type():
                 objs = self._lookup_by_type(key)
             case _:
-                raise TypeError(f"Invalid key type: {type(key)}")
+                msg = f"Invalid key type: {type(key)}"
+                raise TypeError(msg)
 
         if tag:
             return [obj for obj, metadata in objs if tag == metadata.tag]
-        else:
-            return [obj for obj, _metadata in objs]
+        return [obj for obj, _metadata in objs]
 
     def _lookup_by_name(self, name: str) -> list[tuple[Any, Metadata]]:
         result = []

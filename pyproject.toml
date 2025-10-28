@@ -66,16 +66,12 @@ skips = [
 # ---
 
 [tool.deptry]
-ignore_obsolete = [
-]
-ignore_missing = [
-]
-ignore_transitive = [
-]
+ignore_obsolete = []
+ignore_missing = []
+ignore_transitive = []
 exclude = [
     '.tox', 'tests', 'sandbox', 'doc', 'scripts',
 ]
-
 
 # ---
 

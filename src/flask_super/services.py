@@ -2,11 +2,10 @@ from __future__ import annotations
 
 import importlib
 from inspect import signature
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import svcs
 from attr import field, frozen
-from flask import Flask
 from svcs.flask import register_factory
 
 __all__ = [
@@ -14,6 +13,9 @@ __all__ = [
 ]
 
 from flask_super.registry import lookup
+
+if TYPE_CHECKING:
+    from flask import Flask
 
 
 def register_services(app: Flask):

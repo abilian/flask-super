@@ -8,8 +8,7 @@ from flask_super.services import register_services, register_singletons
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    app = svcs.flask.init_app(app)
-    return app
+    return svcs.flask.init_app(app)
 
 
 def test_single_service():

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
-from collections.abc import Callable
+from typing import TYPE_CHECKING, Any
 
 import click
 
@@ -10,6 +9,9 @@ from flask_super.registry import lookup, register
 __all__ = ["command", "group", "register_commands"]
 
 from flask_super.scanner import scan_package
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 def command(*args: Any, **kwargs: Any) -> Callable:
