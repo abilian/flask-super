@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from attr import field, frozen
+from typing_extensions import assert_never
 
 __all__ = ["lookup", "register", "registry"]
 
@@ -40,8 +41,7 @@ class Registry:
             case type():
                 objs = self._lookup_by_type(key)
             case _:
-                msg = f"Invalid key type: {type(key)}"
-                raise TypeError(msg)
+                assert_never(key)
 
         if tag:
             return [obj for obj, metadata in objs if tag == metadata.tag]

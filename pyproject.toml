@@ -24,11 +24,16 @@ dependencies = [
     "loguru>=0.7",
     "attrs>=23.1",
     "termcolor>=2.4",
+    "typing-extensions>=4.1",
 ]
 
 [build-system]
 requires = ["uv_build>=0.8.4,<0.9.0"]
 build-backend = "uv_build"
+
+[tool.pyrefly.errors]
+missing-import = "ignore"
+unsupported-operation = "ignore"
 
 [dependency-groups]
 dev = [
@@ -96,3 +101,16 @@ reportPrivateImportUsage = false
 reportGeneralTypeIssues = false
 reportMissingImports = false
 reportOptionalSubscript = false
+
+[tool.pyrefly]
+project-includes = ["src"]
+project-excludes = [
+    ".tox",
+    ".nox",
+    "tests",
+    "sandbox",
+    "doc",
+    "scripts",
+    "tmp",
+]
+infer-with-first-use = false

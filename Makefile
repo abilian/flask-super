@@ -63,7 +63,12 @@ clean-test: ## remove test and coverage artifacts
 lint:
 	adt check src tests
 	ruff check
+	@make typecheck
+
+typecheck:
 	pyrefly check
+	ty check
+	zuban check
 
 # Alt
 #lint:

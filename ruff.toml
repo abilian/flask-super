@@ -13,6 +13,8 @@ extend-ignore = [
     "SIM108", # Use ternary operator
     "A005",
     "T201", #  	print
+    # Fix someday
+    "CPY001", # missing copyright
 ]
 
 [lint.mccabe]

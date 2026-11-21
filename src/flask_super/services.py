@@ -4,7 +4,6 @@ import importlib
 from inspect import signature
 from typing import TYPE_CHECKING, Any
 
-import svcs
 from attr import field, frozen
 from svcs.flask import register_factory
 
@@ -26,8 +25,8 @@ def register_services(app: Flask):
             register_factory(app, cls_or_factory, factory)
 
         elif isinstance(cls_or_factory, type):
-            cls = cls_or_factory
-            svcs.flask.register_factory(app, cls, cls)
+            cls: type[Any] = cls_or_factory
+            register_factory(app, cls, cls)
 
         else:
             factory = cls_or_factory
@@ -35,7 +34,7 @@ def register_services(app: Flask):
             cls_name = sig.return_annotation
             module = importlib.import_module(factory.__module__)
             cls = getattr(module, cls_name)
-            svcs.flask.register_factory(app, cls, factory)
+            register_factory(app, cls, factory)
 
 
 @frozen
@@ -53,4 +52,4 @@ def register_singletons(app: Flask):
     singletons = lookup(tag="singleton")
 
     for cls in singletons:
-        svcs.flask.register_factory(app, cls, SingletonFactory(cls))
+        register_factory(app, cls, SingletonFactory(cls))

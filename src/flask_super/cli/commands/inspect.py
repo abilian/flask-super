@@ -45,7 +45,7 @@ def inspect_services():
 
     registry = container.registry
     services = [
-        (registered_service.svc_type.__name__, registered_service.factory)
+        (_name(registered_service.svc_type), registered_service.factory)
         for registered_service in registry._services.values()
     ]
     services.sort(key=lambda x: x[0].lower())
@@ -53,11 +53,11 @@ def inspect_services():
     rows = []
     for k, _v in services:
         if hasattr(_v, "cls"):
-            v = _v.cls  # type: ignore
+            v = _v.cls
         else:
             v = _v
 
-        name = v.__name__
+        name = _name(v)
         module = v.__module__
         rows.append((k, name, module))
 
@@ -74,3 +74,8 @@ def print_table(headers, rows):
     for row in rows:
         print(template.format(*row))
     print()
+
+
+def _name(obj: object) -> str:
+    # svcs accepts any TypeForm (e.g. Annotated[...]), which may lack __name__.
+    return getattr(obj, "__name__", repr(obj))
