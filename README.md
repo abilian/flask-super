@@ -31,6 +31,8 @@
 
 This is a preview. Expect the API to change.
 
+See [CHANGES.md](CHANGES.md) for the release history.
+
 ## Sample usage
 
 ```python
